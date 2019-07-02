@@ -1,5 +1,7 @@
 package com.drogaria.negocio;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,12 @@ public class GerenciarPessoa {
 	private PessoaRepository pessoaRepository;
 	
 	public Pessoa buscarPessoa(Integer idPessoa) {
-		return pessoaRepository.findById(idPessoa).get();
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(1);
+		pessoa.setNome("João");
+		pessoa.setCpf("123456");
+		pessoaRepository.save(pessoa);
+		Optional<Pessoa> pessoa2 = pessoaRepository.findById(idPessoa);
+		return pessoa2.get();
 	}
 }
