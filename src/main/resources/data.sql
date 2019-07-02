@@ -1,0 +1,1 @@
+insert into pessoa(idPessoa, nome, cpf) values(1, 'Wyllian viado', '123456')
