@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div>
+	<label>Nome:</label> 
+	<input type="text" ng-model="nome"><br>
+	
+	<label>CPF:</label>
+	<input type="text" ng-model="cpf"><br>
+	
+	<input type="button" value="Salvar" ng-click="salvar()">
+	<br /><br />
+	
+	<table style="width: 50%; border:1px solid">
+		<tr>
+			<td>Nome</td>
+			<td>CPF</td>
+			<td>Ação</td>
+		</tr>
+		<tr ng-repeat="p in pessoas">
+			<td>{{p.nome}}</td>
+			<td>{{p.cpf}}</td>
+			<td>
+				<a href="javascript:void(0)" ng-click="alterar(p)">Alterar</a>&nbsp;&nbsp;&nbsp;
+				<a href="javascript:void(0)" ng-click="excluir(p)">Excluir</a>
+			</td>
+		</tr>
+	</table>
+</div>
