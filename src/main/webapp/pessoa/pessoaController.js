@@ -27,11 +27,7 @@ app.controller("pessoaController", function($scope, pessoaService){
 		$scope.nome = pessoa.nome;
 		$scope.cpf = pessoa.cpf;
 	}
-	
-	$scope.excluir = function(pessoa){
 		
-	}
-	
 	buscarTodos = function(){
 		pessoaService.buscarTodos().then(function(response){
 			$scope.pessoas = response.data	
@@ -40,6 +36,10 @@ app.controller("pessoaController", function($scope, pessoaService){
 	
 	$scope.buscarPessoas = function(){
 		pessoaService.buscar()
+	}
+	
+	$scope.deletarPessoa = function(){
+		pessoaService.deletar()
 	}
 	
 	init();

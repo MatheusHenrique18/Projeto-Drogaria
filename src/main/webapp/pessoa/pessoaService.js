@@ -11,4 +11,8 @@ app.service("pessoaService", function($http){
 	this.buscarTodos = function(){
 		return $http.get("pessoa/consultar");
 	};
+	
+	this.deletar = function(idPessoa){
+		return $http.get("pessoa/deletar/" + idPessoa);
+	}
 });

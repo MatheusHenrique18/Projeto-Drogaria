@@ -32,4 +32,12 @@ public class GerenciarPessoa {
 	public Pessoa cadastrarPessoa(Pessoa pessoa) {
 		return pessoaRepository.save(pessoa);
 	}
+	
+	public Pessoa deletarPessoa(Integer idPessoa) {
+		Optional<Pessoa> pessoa = pessoaRepository.findById(idPessoa);
+		if (pessoa != null) {
+			pessoaRepository.deleteById(idPessoa);
+		}
+		return pessoa.get();
+	}
 }
